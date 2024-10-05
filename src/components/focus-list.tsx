@@ -38,7 +38,7 @@ const FocusList: FC<Props> = ({ todos }) => {
 
     const [todoItems, setTodoItems] = useState<todoType[]>(todos);
 
-    const createTodo = (text: string) => {
+    const createFocus = (text: string) => {
         const id = (todoItems.at(-1)?.id ?? 0) + 1;
         addTodo(id, text);
         setTodoItems((prev) => [...prev, { id: id, goal: text, done: false }]);
@@ -64,8 +64,8 @@ const FocusList: FC<Props> = ({ todos }) => {
     };
 
     return (
-        <main className="flex flex-col justify-around">
-            <section className="flex mx-auto w-full flex-col items-center p-16">
+        <main className="mx-auto max-w-4xl w-full flex flex-col justify-around">
+            <section className="flex w-full flex-col items-center p-16">
                 <div className="w-full flex flex-col mt-8 gap-2">
                     {todoItems.map((todo) => (
                         <Focus
@@ -77,7 +77,7 @@ const FocusList: FC<Props> = ({ todos }) => {
                         />
                     ))}
                 </div>
-                <AddFocus createTodo={createTodo} />
+                <AddFocus createFocus={createFocus} />
             </section>
 
             {/* Random Quote */}
@@ -91,7 +91,7 @@ const FocusList: FC<Props> = ({ todos }) => {
                     </div>
                 ) : (
                     <div className="text-center">
-                        <span className="text-2xl font-semibold text-white">{randomQuote}</span>
+                        <span className="text-xl font-medium text-white">"{randomQuote}"</span>
                     </div>
                 )}
             </section>
