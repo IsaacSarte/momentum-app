@@ -29,7 +29,7 @@ const AddFocus: FC<Props> = ({ createFocus }) => {
       <span className="text-white text-2xl font-semibold cursor-pointer">
         Todo +
       </span>
-      {/* <input
+      <input
                 type="text"
                 className="max-w-lg w-full px-2 py-1 outline-none bg-transparent border-b-2 border-white rounded text-white"
                 onChange={handleInput}
@@ -39,7 +39,7 @@ const AddFocus: FC<Props> = ({ createFocus }) => {
                         handleAdd();
                     }
                 }}
-            /> */}
+            />
     </div>
   );
 };
